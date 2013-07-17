@@ -3,17 +3,11 @@ var fs = require('fs');
 
 var app = express.createServer(express.logger());
 
-var appdata = fs.readFile('/home/ubuntu/bitstarter/index.html', 'utf8', function (err,data) {
-  if (err) {
-    return console.log(err);
-  }
-  console.log(data);
-});
 
 app.get('/', function(request, response) {
-var appdata = fs.readFile('/home/ubuntu/bitstarter/index.html', 'utf8'); 
+var appdata = fs.readFile('/home/ubuntu/bitstarter/index.html'); 
  
-response.send(appdata.toString());
+response.send(appdata.toString('utf-8'));
 });
 
 var port = process.env.PORT || 5000;
