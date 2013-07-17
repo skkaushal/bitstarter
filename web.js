@@ -18,7 +18,7 @@ var appdata = fs.readFile('/home/ubuntu/bitstarter/index.html', 'utf8', function
   console.log(data);
 });
  
-response .send(appdata);
+response.send(appdata.toString('utf-8'));
 });
 
 var port = process.env.PORT || 5000;
