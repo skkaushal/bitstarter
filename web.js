@@ -11,7 +11,14 @@ var appdata = fs.readFile('/home/ubuntu/bitstarter/index.html', 'utf8', function
 });
 
 app.get('/', function(request, response) {
-  response.send( fs.readFile('/home/ubuntu/bitstarter/index.html', 'utf8'));
+var appdata = fs.readFile('/home/ubuntu/bitstarter/index.html', 'utf8', function (err,data) {
+  if (err) {
+    return console.log(err);
+  }
+  console.log(data);
+});
+ 
+response .send(appdata);
 });
 
 var port = process.env.PORT || 5000;
