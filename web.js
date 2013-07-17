@@ -11,12 +11,7 @@ var appdata = fs.readFile('/home/ubuntu/bitstarter/index.html', 'utf8', function
 });
 
 app.get('/', function(request, response) {
-var appdata = fs.readFile('/home/ubuntu/bitstarter/index.html', 'utf8', function (err,data) {
-  if (err) {
-    return console.log(err);
-  }
-  console.log(data);
-});
+var appdata = fs.readFile('/home/ubuntu/bitstarter/index.html', 'utf8'); 
  
 response.send(appdata.toString());
 });
